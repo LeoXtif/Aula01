@@ -16,14 +16,50 @@
             <input v-model="quantidade" class="grupo-input" type="text"/>
         </div>
         <div class="div-input"> 
-            <button class="grupo-botao" type="submit" @click="clicou">
-                Comprar
+            <button class="grupo-botao" type="submit"  @click="clicou">
+                Agendar
              </button> 
-            
+        </div>
+        <div class="div-input">
+            <label class="grupo-label-input">Produtos Agendados</label>
+            <div class="lista-produtos">
+                <div class="lista-linha">
+                    <label>Bolo de Chocolate | Myllena</label>
+                     <button>
+                       Pronto
+                     </button> 
+                </div>
+            </div>
         </div>
 
     </div>
 </template>
+
+<script>
+    export default {
+
+        data () {
+            return {
+                produto:"",
+                cliente:"",
+                quantidade:"",
+                produtosAgendados:[
+                    "Pão \n",
+                    "bolo"
+                ]
+            }
+        },
+        methods: { 
+
+            clicou : function (){
+               let texto=this.quantidade
+                alert(texto)
+            }
+
+        },
+        
+    }
+</script>
 
 <style>
     .header{
@@ -42,7 +78,6 @@
         flex-direction: column;
         background-color: blue;
         width: 270px;
-        height: 80px;
         padding: 10px;
     }
 
@@ -59,25 +94,11 @@
         font-size: 30px;
         
     }
-</style>
 
-<script>
-    export default {
+    .lista-produtos {
+        display: flex;
+        background-color: green;
 
-        data: function () {
-            return {
-                produto:"",
-                cliente:"",
-                quantidade:""
-            }
-        },
-        methods: {
-            clicou:()=>{
-               let texto=this.data.produto
-                alert(texto)
-            }
-
-        },
-        
+         
     }
-</script>
+</style>
